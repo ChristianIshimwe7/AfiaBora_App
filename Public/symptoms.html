@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms Checker</title>
+    <link rel="stylesheet" href="symptoms.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Afiabora Logo">
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="appointment.html">Appointments</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <a href="login.html">Login</a> | <a href="signup.html">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="symptoms-checker">
+            <h1>Symptoms Checker</h1>
+            <p>Enter your symptoms below, and we will suggest possible conditions.</p>
+
+            <form id="symptoms-form">
+                <label for="symptoms-input">Enter Symptoms (comma-separated):</label>
+                <input type="text" id="symptoms-input" placeholder="e.g., headache, fever, nausea">
+                
+                <label for="common-symptoms">Or select common symptoms:</label>
+                <select id="common-symptoms" multiple>
+                    <option value="headache">Headache</option>
+                    <option value="fever">Fever</option>
+                    <option value="nausea">Nausea</option>
+                    <option value="fatigue">Fatigue</option>
+                    <option value="cough">Cough</option>
+                </select>
+                
+                <button type="submit" class="btn-submit">Check Symptoms</button>
+            </form>
+
+            <div id="results-section">
+                <h2>Possible Conditions</h2>
+                <div id="results"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Afiabora. All rights reserved.</p>
+    </footer>
+    
+    <script src="symptoms.js"></script>
+</body>
+</html>

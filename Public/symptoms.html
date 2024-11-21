@@ -5,24 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Symptoms Checker</title>
     <link rel="stylesheet" href="symptoms.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Afiabora Logo">
-        </div>
-        <nav class="header-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="appointment.html">Appointments</a></li>
-                <li><a href="reports.html">Reports</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-        </nav>
-        <div class="auth-links">
-            <a href="login.html">Login</a> | <a href="signup.html">Sign Up</a>
-        </div>
-    </header>
+    <div id="header"></div>
 
     <main>
         <section class="symptoms-checker">
@@ -52,9 +38,18 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Afiabora. All rights reserved.</p>
-    </footer>
+    <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically fro all pages
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
     
     <script src="symptoms.js"></script>
 </body>

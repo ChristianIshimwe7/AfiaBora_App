@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View History</title>
+  <link rel="stylesheet" href="history.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header"></div> 
+  <div class="history-container">
+    <header>
+      <h1>Health History</h1>
+      <p>Here is your previous health-related data and medical history.</p>
+    </header>
+
+    <section class="history-table">
+      <h2>Appointment History</h2>
+      <table>
+        <tr>
+          <th>Doctor</th>
+          <th>Hospital</th>
+          <th>Date</th>
+          <th>Location</th>
+        </tr>
+        <tr>
+          <td>Dr. Smith</td>
+          <td>City Hospital</td>
+          <td>01/12/2024</td>
+          <td>Downtown</td>
+        </tr>
+        <tr>
+          <td>Dr. Johnson</td>
+          <td>Medical Center</td>
+          <td>15/11/2024</td>
+          <td>Westside</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="history-reports">
+      <h2>Medical Reports</h2>
+      <ul>
+        <li><a href="#">Blood Test Report - 15/11/2024</a></li>
+        <li><a href="#">X-Ray Report - 10/10/2024</a></li>
+        <li><a href="#">ECG Report - 05/09/2024</a></li>
+      </ul>
+    </section>
+
+    <section class="history-symptoms">
+      <h2>Symptoms Checker History</h2>
+      <ul>
+        <li>01/12/2024: Fever, cough - <a href="#">View Results</a></li>
+        <li>15/11/2024: Headache, nausea - <a href="#">View Results</a></li>
+        <li>10/10/2024: Chest pain - <a href="#">View Results</a></li>
+      </ul>
+    </section>
+
+  </div>
+  <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+  
+</body>
+</html>

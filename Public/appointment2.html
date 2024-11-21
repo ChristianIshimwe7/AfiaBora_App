@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Appointment</title>
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="appointment2.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header"></div> 
+
+  <div class="appointment-container">
+    <h2>Choose Your Appointment Date and Time</h2>
+
+    <!-- Display selected date -->
+    <div id="selected-date">Selected Date: None</div>
+
+    <!-- FullCalendar -->
+    <div id="calendar"></div>
+
+    <!-- Time Section -->
+    <div class="time-section">
+      <label for="appointment-time">Select Time:</label>
+      <div class="time-picker">
+        <button class="time-btn">08:00 AM</button>
+        <button class="time-btn">09:00 AM</button>
+        <button class="time-btn">10:00 AM</button>
+        <button class="time-btn">11:00 AM</button>
+        <button class="time-btn">12:00 PM</button>
+        <button class="time-btn">01:00 PM</button>
+        <button class="time-btn">02:00 PM</button>
+        <button class="time-btn">03:00 PM</button>
+        <button class="time-btn">04:00 PM</button>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <button class="save-btn" onclick="saveAppointment()">Save Appointment</button>
+  </div>
+
+  <div id="footer"></div> 
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
+  <script src="appointment2.js"></script>
+
+
+  <script>
+      // JavaScript to include the header and footer dynamically
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>

@@ -12,7 +12,7 @@ document.getElementById("symptoms-form").addEventListener("submit", function (ev
 
     const resultsSection = document.getElementById("results-section");
     const resultsDiv = document.getElementById("results");
-    resultsDiv.innerHTML = ""; // Clear previous results
+    resultsDiv.innerHTML = ""; // for Clearing previous results
     resultsSection.style.display = "block";
 
     if (conditions.length > 0) {

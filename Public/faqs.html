@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs</title>
+  <link rel="stylesheet" href="faqs.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div> 
+  <div class="faq-container">
+    <header>
+      <h1>Frequently Asked Questions</h1>
+      <p>Here are some common questions and answers about using our platform.</p>
+    </header>
+
+    <section class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">What is Afiabora?</button>
+        <div class="faq-answer">
+          <p>Afiabora is a health platform that allows you to track symptoms, book appointments, and view your health history. It provides tools to manage your health and improve your well-being.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I book an appointment?</button>
+        <div class="faq-answer">
+          <p>You can book an appointment by going to the Appointment section, selecting your preferred doctor, and choosing a suitable time slot. You will receive a confirmation once your appointment is booked.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I view my health reports?</button>
+        <div class="faq-answer">
+          <p>Your health reports can be accessed from the Reports section. Here, you can view and download your medical reports, such as test results and doctor notes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I update my health information?</button>
+        <div class="faq-answer">
+          <p>Yes, you can update your health information from the Dashboard. You can enter new symptoms, record changes in weight, and other vital health data.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I access the symptom checker?</button>
+        <div class="faq-answer">
+          <p>The symptom checker can be found in the Dashboard. By answering a series of questions, you can get an idea of what health issues you may be facing.</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+
+  <script src="faqs.js"></script>
+</body>
+</html>

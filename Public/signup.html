@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afiabora - Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header"></div> 
+  <div class="signup-container">
+    <div class="signup-card">
+      <h2>Create Your Account</h2>
+      <p>Join Afiabora to access your health details</p>
+      <form id="signup-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="Enter your location" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+      <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+  <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically fro all pages
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>

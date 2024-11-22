@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <link rel="stylesheet" href="reports.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div> 
+  <div class="reports-container">
+    <header>
+      <h1>Medical Reports</h1>
+      <p>Here is your list of medical reports for review and download.</p>
+    </header>
+
+    <section class="reports-table">
+      <h2>Report List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Report Type</th>
+            <th>Date</th>
+            <th>Doctor</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blood Test</td>
+            <td>01/12/2024</td>
+            <td>Dr. Smith</td>
+            <td><a href="#">View Report</a> | <a href="#">Download</a></td>
+          </tr>
+          <tr>
+            <td>X-Ray</td>
+            <td>15/11/2024</td>
+            <td>Dr. Johnson</td>
+            <td><a href="#">View Report</a> | <a href="#">Download</a></td>
+          </tr>
+          <tr>
+            <td>ECG</td>
+            <td>05/09/2024</td>
+            <td>Dr. Lee</td>
+            <td><a href="#">View Report</a> | <a href="#">Download</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically to all pages
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>

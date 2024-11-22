@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afiabora - Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div> 
+  <div class="login-container">
+    <div class="login-card">
+      <h2>Welcome Back to Afiabora</h2>
+      <p>Please log in to continue</p>
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="btn">Log In</button>
+      </form>
+      <p class="signup-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </div>
+
+  <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

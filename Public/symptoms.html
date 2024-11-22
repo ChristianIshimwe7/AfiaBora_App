@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms Checker</title>
+    <link rel="stylesheet" href="symptoms.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="symptoms-checker">
+            <h1>Symptoms Checker</h1>
+            <p>Enter your symptoms below, and we will suggest possible conditions.</p>
+
+            <form id="symptoms-form">
+                <label for="symptoms-input">Enter Symptoms (comma-separated):</label>
+                <input type="text" id="symptoms-input" placeholder="e.g., headache, fever, nausea">
+                
+                <label for="common-symptoms">Or select common symptoms:</label>
+                <select id="common-symptoms" multiple>
+                    <option value="headache">Headache</option>
+                    <option value="fever">Fever</option>
+                    <option value="nausea">Nausea</option>
+                    <option value="fatigue">Fatigue</option>
+                    <option value="cough">Cough</option>
+                </select>
+                
+                <button type="submit" class="btn-submit">Check Symptoms</button>
+            </form>
+
+            <div id="results-section">
+                <h2>Possible Conditions</h2>
+                <div id="results"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically fro all pages
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+    
+    <script src="symptoms.js"></script>
+</body>
+</html>

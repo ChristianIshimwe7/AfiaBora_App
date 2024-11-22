@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afiabora - Appointment</title>
+  <link rel="stylesheet" href="appointment.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="header"></div>
+
+  <div class="appointment-container">
+    <h2>Available Doctors</h2>
+    <p>Select a doctor to book your appointment</p>
+
+    <table class="doctor-table">
+      <thead>
+        <tr>
+          <th>Doctor Name</th>
+          <th>Hospital</th>
+          <th>Location</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="doctor-row">
+          <td>Dr. John Doe</td>
+          <td>St. Mary's Hospital</td>
+          <td>Downtown, New York</td>
+          <td><button class="book-btn" onclick="redirectToAppointment2()">Book Appointment</button></td>
+        </tr>
+        <tr class="doctor-row">
+          <td>Dr. Jane Smith</td>
+          <td>City Care Clinic</td>
+          <td>Uptown, Los Angeles</td>
+          <td><button class="book-btn" onclick="redirectToAppointment2()">Book Appointment</button></td>
+        </tr>
+        <tr class="doctor-row">
+          <td>Dr. Emily White</td>
+          <td>Greenfield Medical Center</td>
+          <td>Suburbia, Chicago</td>
+          <td><button class="book-btn" onclick="redirectToAppointment2()">Book Appointment</button></td>
+        </tr>
+        <!-- Add more doctor rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="footer"></div> 
+
+    <script>
+        // JavaScript to include the header and footer
+        document.getElementById('header').innerHTML = fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+
+        document.getElementById('footer').innerHTML = fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+
+    // Function to handle redirection
+    function redirectToAppointment2() {
+      window.location.href = "appointment2.html"; // Redirects to appointment2 page
+    }
+  </script>
+</body>
+</html>

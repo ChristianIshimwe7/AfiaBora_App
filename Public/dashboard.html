@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header"></div> 
+  <div class="dashboard-container">
+    <header>
+      <h1>Welcome, <span id="user-name">John Doe</span></h1>
+    </header>
+
+    <div class="dashboard-cards">
+      <!-- User Info Card -->
+      <div class="card">
+        <h2>User Info</h2>
+        <p><strong>Name:</strong> <span id="user-name-display">John Doe</span></p>
+        <p><strong>Age:</strong> <span id="user-age">30</span></p>
+      </div>
+
+      <!-- Health Metrics Card -->
+      <div class="card">
+        <h2>Health Metrics</h2>
+        <p><strong>Calories:</strong> <span id="user-calories">2500</span> kcal</p>
+        <p><strong>Heart Rate:</strong> <span id="user-heart-rate">75</span> bpm</p>
+        <p><strong>Weight:</strong> <span id="user-weight">70</span> kg</p>
+      </div>
+
+      <!-- Appointments Card -->
+      <div class="card">
+        <h2>Appointments</h2>
+        <p><strong>Upcoming Appointment:</strong> <span id="user-appointment">Dr. Smith - 01/12/2024</span></p>
+      </div>
+
+      <!-- Reports/History Card -->
+      <div class="card">
+        <h2>Reports / History</h2>
+        <p><strong>Last Checkup:</strong> <span id="user-last-checkup">12/10/2024</span></p>
+        <button>View Full History</button>
+      </div>
+
+      <!-- Symptoms Checker Card -->
+      <div class="card">
+        <h2>Symptoms Checker</h2>
+        <button onclick="window.location.href='symptoms.html'">Check Symptoms</button>
+      </div>
+
+      <!-- Notifications Card -->
+      <div class="card notification">
+        <h2>Notifications</h2>
+        <p><strong>New Notification:</strong> Your appointment with Dr. Smith is confirmed for 01/12/2024.</p>
+      </div>
+
+      <!-- Medication Schedule Card -->
+      <div class="card">
+        <h2>Medication Schedule</h2>
+        <p><strong>Next Dose:</strong> 9:00 AM - Paracetamol</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically
+      document.getElementById('header').innerHTML = fetch('header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+
+  <script>
+    // Simulate dynamic data - in a real-world app, this would come from the server or an API
+    document.getElementById('user-name-display').innerText = 'Jane Doe';
+    document.getElementById('user-age').innerText = '28';
+    document.getElementById('user-calories').innerText = '2000';
+    document.getElementById('user-heart-rate').innerText = '80';
+    document.getElementById('user-weight').innerText = '65';
+    document.getElementById('user-appointment').innerText = 'Dr. Johnson - 10/11/2024';
+    document.getElementById('user-last-checkup').innerText = '05/10/2024';
+  </script>
+
+</body>
+</html>

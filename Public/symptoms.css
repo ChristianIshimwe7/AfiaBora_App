@@ -1,0 +1,106 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header and Footer Styles */
+header, footer {
+    padding: 20px;
+    color: white;
+    background-color: #007BFF;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a, .auth-links a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+/* Symptoms Checker Section */
+.symptoms-checker {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.symptoms-checker h1 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.symptoms-checker p {
+    margin-bottom: 20px;
+}
+
+.symptoms-checker form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.symptoms-checker input, .symptoms-checker select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Results Section */
+#results-section {
+    margin-top: 20px;
+    display: none;
+}
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.result-card {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Appointment</title>
+</head>
+<body>
+    <h1>Book an Appointment</h1>
+    <form method="POST" action="{{ url_for('appointments.create_appointment') }}">
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" id="patient_name" name="patient_name" required><br><br>
+
+        <label for="doctor_name">Doctor Name:</label>
+        <input type="text" id="doctor_name" name="doctor_name" required><br><br>
+
+        <label for="appointment_date">Date:</label>
+        <input type="date" id="appointment_date" name="appointment_date" required><br><br>
+
+        <label for="appointment_time">Time:</label>
+        <input type="time" id="appointment_time" name="appointment_time" required><br><br>
+
+        <label for="service">Service:</label>
+        <input type="text" id="service" name="service"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

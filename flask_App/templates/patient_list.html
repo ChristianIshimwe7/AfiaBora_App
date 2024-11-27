@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Patient List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient List</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+  <div class="patient-list-container">
     <h1>Patient List</h1>
     <ul>
-        {% for patient in patients %}
-            <li>{{ patient }}</li>
-        {% endfor %}
+      {% for patient in patients %}
+      <li>{{ patient.name }}, Age: {{ patient.age }}, Weight: {{ patient.weight }}, Temperature: {{ patient.temperature }}, Respiration Rate: {{ patient.respiration_rate }}, Service: {{ patient.service }}, Hospital: {{ patient.hospital }}, Doctor: {{ patient.doctor }}, Medicine: {{ patient.medicine }}</li>
+      {% endfor %}
     </ul>
+  </div>
 </body>
 </html>
+

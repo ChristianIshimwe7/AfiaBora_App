@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Patient Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Form</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Enter Patient Data</h1>
-    <form method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required><br>
-        <label for="weight">Weight:</label>
-        <input type="number" step="0.01" id="weight" name="weight" required><br>
-        <label for="temperature">Temperature:</label>
-        <input type="number" step="0.1" id="temperature" name="temperature" required><br>
-        <label for="respiration_rate">Respiration Rate:</label>
-        <input type="number" id="respiration_rate" name="respiration_rate" required><br>
-        <label for="service">Service:</label>
-        <input type="text" id="service" name="service" required><br>
-        <label for="hospital">Hospital:</label>
-        <input type="text" id="hospital" name="hospital" required><br>
-        <label for="doctor">Doctor:</label>
-        <input type="text" id="doctor" name="doctor" required><br>
-        <button type="submit">Submit</button>
-    </form>
+  <div class="signup-container">
+    <div class="signup-card">
+      <h2>Enter Patient Data</h2>
+      <p>Please fill in the patient's details below</p>
+      <form method="post" action="/">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Enter patient's age" required>
+
+        <label for="weight">Weight</label>
+        <input type="number" step="0.01" id="weight" name="weight" placeholder="Enter patient's weight (in kg)" required>
+
+        <label for="temperature">Temperature</label>
+        <input type="number" step="0.1" id="temperature" name="temperature" placeholder="Enter patient's temperature (in Celsius)" required>
+
+        <label for="respiration_rate">Respiration Rate</label>
+        <input type="number" id="respiration_rate" name="respiration_rate" placeholder="Enter patient's respiration rate (breaths per minute)" required>
+
+        <label for="service">Service</label>
+        <input type="text" id="service" name="service" placeholder="Enter patient's service" required>
+
+        <label for="hospital">Hospital</label>
+        <input type="text" id="hospital" name="hospital" placeholder="Enter patient's hospital" required>
+
+        <label for="doctor">Doctor</label>
+        <input type="text" id="doctor" name="doctor" placeholder="Enter doctor's name for approval" required>
+
+        <label for="medicine">Medicine Suggestion</label>
+        <input type="text" id="medicine" name="medicine" placeholder="Enter medicine suggestion">
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

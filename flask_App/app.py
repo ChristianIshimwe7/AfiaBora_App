@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, request, jsonify, render_template, redirect, url_for
 from flask_mysqldb import MySQL
 
@@ -10,6 +11,25 @@ app.config['MYSQL_PASSWORD'] = '*********'
 app.config['MYSQL_DB'] = '*************'
 
 mysql = MySQL(app)
+=======
+# app.py
+
+from flask import Flask, request, render_template, redirect, url_for
+from pymongo import MongoClient
+from routes.appointments import appointments_bp
+import requests
+import os
+
+
+app = Flask(__name__)
+
+app.register_blueprint(appointment_bp, url_prefix='/appointments')
+
+client = MongoClient('localhost', 27017)
+db = client['medical_db']
+collection = db['patients']
+app.config['db'] = db
+>>>>>>> 69a3bc01a1cd91ccb7bbf69e987699253325bc27
 
 class Patient:
     def __init__(self, name, age, weight, temperature, respiration_rate, service, hospital, doctor, medicine=None):

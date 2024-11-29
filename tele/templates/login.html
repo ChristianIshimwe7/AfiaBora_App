@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afiabora - Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-card">
+      <h2>Welcome Back to Afiabora</h2>
+      <p>Please log in to continue</p>
+      
+      <!-- Form with POST method to send data to the server -->
+      <form action="{{ url_for('auth.login') }}" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="btn">Log In</button>
+      </form>
+      
+      <p class="signup-link">Don't have an account? <a href="{{ url_for('auth.register') }}">Sign Up</a></p>
+      
+      <!-- Home navigation link -->
+      <p class="home-link">Go back to <a href="{{ url_for('home') }}">Home</a></p>
+    </div>
+  </div>
+
+  {% include 'footer.html' %} <!-- Include footer -->
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

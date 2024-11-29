@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .ticket {
+            border: 2px dashed #000;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .ticket h2 {
+            margin: 0;
+        }
+        .ticket p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <h2>Appointment Ticket</h2>
+        <p><strong>Ticket ID:</strong> {{ ticket_id }}</p>
+        <p><strong>Patient Name:</strong> {{ appointment['patient_name'] }}</p>
+        <p><strong>Doctor:</strong> {{ appointment['doctor_name'] }}</p>
+        <p><strong>Date:</strong> {{ appointment['appointment_date'] }}</p>
+        <p><strong>Time:</strong> {{ appointment['appointment_time'] }}</p>
+        <p><strong>Service:</strong> {{ appointment['service'] }}</p>
+        <hr>
+        <p>Thank you for booking your appointment!</p>
+    </div>
+    <button onclick="window.print()">Print Ticket</button>
+</body>
+</html>

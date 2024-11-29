@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afiabora - Sign Up</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body>
+    <div id="header"></div> 
+  <div class="signup-container">
+    <div class="signup-card">
+      <h2>Create Your Account</h2>
+      <p>Join Afiabora to access your health details</p>
+      <!-- Form with POST method to submit data to the server -->
+      <form action="{{ url_for('auth.register') }}" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+      <p class="login-link">Already have an account? <a href="{{ url_for('auth.login') }}">Login</a></p>
+      <!-- Home navigation link -->
+      <p class="home-link">Go back to <a href="{{ url_for('home') }}">Home</a></p>
+    </div>
+  </div>
+
+  <div id="footer"></div> 
+
+  <script>
+      // JavaScript to include the header and footer dynamically for all pages
+      document.getElementById('header').innerHTML = fetch('/templates/header.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('header').innerHTML = data);
+
+      document.getElementById('footer').innerHTML = fetch('/templates/footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>

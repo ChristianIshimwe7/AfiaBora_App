@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Reports</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/reports.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div id="header"></div>
+  <div class="reports-container">
+    <header>
+      <h1>Medical Reports</h1>
+      <p>Here is your list of medical reports for review and download.</p>
+    </header>
+
+    <section class="reports-table">
+      <h2>Report List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Report Type</th>
+            <th>Date</th>
+            <th>Doctor</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for report in reports %}
+          <tr>
+            <td>{{ report.report_type }}</td>
+            <td>{{ report.date }}</td>
+            <td>{{ report.doctor }}</td>
+            <td>
+              <a href="{{ url_for('static', filename=report.file_path) }}" target="_blank">View Report</a> |
+              <a href="{{ url_for('static', filename=report.file_path) }}" download>Download</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    // JavaScript to include the header and footer dynamically
+document.getElementById('header').innerHTML = fetch('/header')
+  .then(response => response.text())
+  .then(data => document.getElementById('header').innerHTML = data);
+
+document.getElementById('footer').innerHTML = fetch('/footer')
+  .then(response => response.text())
+  .then(data => document.getElementById('footer').innerHTML = data);
+
+  </script>
+</body>
+</html>

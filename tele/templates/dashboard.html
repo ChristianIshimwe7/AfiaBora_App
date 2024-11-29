@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  {% if 'user_id' in session %}
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="hamburger" onclick="toggleMenu()">
+      &#9776; <!-- Hamburger icon -->
+    </div>
+    <ul id="nav-links" class="hidden">
+      <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('profile') }}">Profile</a></li>
+      <li><a href="{{ url_for('symptom_checker') }}">Symptom Checker</a></li>
+      <li><a href="{{ url_for('appointments') }}">Appointments</a></li>
+      <li><a href="{{ url_for('reports') }}">Reports</a></li>
+      <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+    </ul>
+  </div>
+  {% endif %}
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-container">
+    <header>
+      <h1>Welcome, <span id="user-name">{{ user_name }}</span></h1> <!-- Dynamically display user's name -->
+    </header>
+
+    <div class="dashboard-cards">
+      <!-- User Info Card -->
+      <div class="card">
+        <h2>User Info</h2>
+        <p><strong>Name:</strong> <span id="user-name-display">{{ user_name }}</span></p> <!-- Dynamically display user's name -->
+        <p><strong>Age:</strong> <span id="user-age">30</span></p>
+        <button onclick="navigateTo('/profile')">Edit Profile</button>
+      </div>
+
+      <!-- Health Metrics Card -->
+      <div class="card">
+        <h2>Health Metrics</h2>
+        <p><strong>Calories:</strong> <span id="user-calories">2500</span> kcal</p>
+        <p><strong>Heart Rate:</strong> <span id="user-heart-rate">75</span> bpm</p>
+        <p><strong>Weight:</strong> <span id="user-weight">70</span> kg</p>
+      </div>
+
+      <!-- Appointments Card -->
+      <div class="card">
+        <h2>Appointments</h2>
+        <p><strong>Upcoming Appointment:</strong> <span id="user-appointment">Dr. Smith - 01/12/2024</span></p>
+        <button onclick="navigateTo('/appointment_list')">Manage Appointments</button>
+      </div>
+
+      <!-- Reports/History Card -->
+      <div class="card">
+        <h2>Reports / History</h2>
+        <p><strong>Last Checkup:</strong> <span id="user-last-checkup">12/10/2024</span></p>
+        <button onclick="navigateTo('/reports')">View Full History</button>
+      </div>
+
+      <!-- Symptoms Checker Card -->
+      <div class="card">
+        <h2>Symptoms Checker</h2>
+        <button onclick="navigateTo('/symptom_checker')">Check Symptoms</button>
+      </div>
+
+      <!-- Medication Schedule Card -->
+      <div class="card">
+        <h2>Medication Schedule</h2>
+        <p><strong>Next Dose:</strong> 9:00 AM - Paracetamol</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div> 
+
+  <!-- JavaScript -->
+  <script>
+    fetch('/footer')
+      .then(response => response.text())
+      .then(data => {
+        // Create a container for the footer and append it to the existing footer element
+        const footer = document.createElement('div');
+        footer.innerHTML = data;
+        document.body.appendChild(footer);  // Append it to the bottom of the page
+      });
+
+    // Navigate to the specified URL
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("active");
+    }
+
+    function logout() {
+      fetch('/logout', {
+        method: 'POST',  // Use POST to avoid accidental GET requests
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action: 'logout',  // Optional: you can add data to indicate logout
+        }),
+      }).then(response => {
+        window.location.href = '/login';  // Redirect to the login page after logout
+      });
+    }
+  </script>
+</body>
+</html>
+

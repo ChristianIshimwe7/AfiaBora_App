@@ -1,0 +1,16 @@
+<header class="headall">
+  <div class="logo">
+      <a href="index.html">Afiabora</a>
+  </div>
+  <nav>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('appointments') }}">Appointments</a></li>
+        <li><a href="{{ url_for('reports') }}">Reports</a></li>
+        <li><a href="{{ url_for('faqs') }}">FAQs</a></li>
+    </ul>
+</nav>
+<div class="auth-links">
+    <a href="{{ url_for('login') }}">Login</a> | <a href="{{ url_for('signup') }}">Sign Up</a>
+</div>
+</header>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | AFIA BORA</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  {% include 'header.html' %} <!-- Include header directly -->
+
+  <!-- Hero Section with Background Image -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>WELCOME TO AFIA BORA</h1>
+      <p>Your Health. Our Priority. Track, Book, and Stay Informed about your Health Journey.</p>
+      <a href="{{ url_for('appointments') }}" class="btn-primary">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-us-section">
+    <h2>ABOUT US</h2>
+    <p>Afiabora is a digital health platform designed to help individuals manage their health more effectively. We offer a wide range of features that enable you to book appointments, check symptoms, view health reports, and track your wellness.</p>
+    <p>Our mission is to make healthcare more accessible and provide patients with the tools they need to stay informed about their health.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <h2>OUR SERVICES</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Symptom Checker</h3>
+        <p>Check your symptoms to get an idea of possible health issues.</p>
+        <a href="{{ url_for('symptom_checker.symptom_checker') }}" class="btn-secondary">Check Now</a>
+      </div>
+      <div class="feature-card">
+        <h3>Appointment Booking</h3>
+        <p>Book an appointment with your preferred doctor easily.</p>
+        <a href="{{ url_for('appointments') }}" class="btn-secondary">Book Now</a>
+      </div>
+      <div class="feature-card">
+        <h3>Health Reports</h3>
+        <p>Access and track your health reports and history.</p>
+        <a href="{{ url_for('reports') }}" class="btn-secondary">View Reports</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <h2>What Our Users Say</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <p>"Afiabora has made managing my health so much easier. I can track my appointments and check my symptoms anytime!"</p>
+        <p>- Sarah, 30</p>
+      </div>
+      <div class="testimonial-card">
+        <p>"The symptom checker helped me understand my condition better. I highly recommend this platform!"</p>
+        <p>- John, 45</p>
+      </div>
+      <div class="testimonial-card">
+        <p>"Booking an appointment with a doctor was simple and quick. I'm happy to have found this platform."</p>
+        <p>- Emily, 28</p>
+      </div>
+    </div>
+  </section>
+
+  {% include 'footer.html' %} <!-- Include footer directly -->
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

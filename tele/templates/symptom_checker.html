@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Checker</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background: linear-gradient(to bottom, #e3f2fd, #90caf9);
+            color: #333;
+        }
+        .symptom-checker {
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            text-align: left;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .symptom-checker p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 12px 25px;
+            margin: 10px;
+            background: linear-gradient(90deg, #42a5f5, #1976d2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+            transform: scale(1.05);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        .home-link {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        .home-link a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .home-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO OUR SYMPTOM CHECKER</h1>
+    <div class="symptom-checker">
+        <p>Our platform connects you to a reliable symptom checker to help you better understand your health conditions.</p>
+        <button class="button" onclick="startSymptomChecker()">Start Symptom Check</button>
+    </div>
+    <script>
+        function startSymptomChecker() {
+            // Redirect to the external symptom checker website
+            window.open('https://symptomchecker.isabelhealthcare.com/', '_blank');
+        }
+    </script>
+    <!-- Home navigation link -->
+    <p class="home-link">Go back to <a href="{{ url_for('home') }}">Home</a></p>
+</body>
+</html>

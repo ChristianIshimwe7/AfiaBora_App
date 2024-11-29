@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Global Layout */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; 
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #007BFF; 
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Appointment Container */
+  .appointment-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  h2 {
+    color: #007BFF; 
+    margin-bottom: 10px;
+    font-size: 2em;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Table Styling */
+  .doctor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .doctor-table th,
+  .doctor-table td {
+    padding: 5px 15px;
+    text-align: center;
+    border: none; 
+  }
+  
+  .doctor-table th {
+    background-color: #007BFF;
+    color: white;
+    font-size: 1em;
+  }
+  
+  .doctor-row {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  
+  .doctor-row:hover {
+    background-color: #e0f7ff; 
+  }
+  
+  .doctor-table td {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .book-btn {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .book-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); 
+  }
+  
+  @media (max-width: 768px) {
+    .doctor-table {
+      width: 100%;
+      font-size: 0.9em;
+    }
+  
+    .book-btn {
+      font-size: 1em;
+      padding: 8px 12px;
+    }
+  }
+  
